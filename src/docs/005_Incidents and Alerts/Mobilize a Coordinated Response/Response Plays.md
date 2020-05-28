@@ -1,0 +1,148 @@
+# Response Plays
+
+---
+<!-- theme: info -->
+
+> ### Note
+>
+> Response Plays are available on our Digital Operations plan and as part of our [Modern Incident Response](https://support.pagerduty.com/docs/pagerduty-modern-incident-response) package. Please [contact our Sales Team](https://www.pagerduty.com/contact-sales/) if you would like to upgrade to a plan with this feature.
+
+## What Is A Response Play?
+
+Response plays let you create packages of incident actions that can be applied at any time to an incident with just a single button click or that can be immediately applied to all new incidents created on a service. This enables you to take a complex activity, like assembling a response team of multiple on-calls and an incident commander, and make it available to anyone that needs to use it. Grouping up these actions into a reusable play has several benefits:
+
+  * Turn documented processes into executable objects.
+  * Reduce the opportunity for errors and mistakes while following incident response processes.
+  * Drastically cut down on the time taken to execute incident response processes.   
+
+## What Can A Response Play Do?
+
+The current set of actions that can be a part of a response play include:
+
+* **Mobilize a Response** (Notify responders other than the assignee to help resolve the incident.)
+* **Engage Stakeholders** (Subscribe people who are not directly involved with resolving the incident to receive **status updates**.)
+* **Publish Status Updates** (Send a prepared status update to all subscribers attached to the incident, to keep them aware of the incident’s progress.)
+* **Add a Conference Bridge** (View the conference bridge details on the incident details page.)
+
+## Example Usage
+
+A response play can be used directly by on-call engineers during triage when they determine something they’ve been paged for is bigger than expected. A service can also be configured to run a response play automatically whenever an incident opens on that service.
+
+## Create A Response Play
+
+<!-- theme: warning -->
+
+> ### Required User Permissions
+>
+> Manager, Global Admin or Account Owner base roles can create response plays.
+>
+>To check what role you have, or if you need your permissions adjusted, please visit our section on [Changing User Roles](https://support.pagerduty.com/docs/user-roles#section-changing-user-roles).
+
+1. Navigate to **Configuration** ➡️ **Response Plays**. 
+2. Click the **New Response Play** button and enter a **Name** and *optional* **Description** and **Team**. 
+3. Next, select your preferred settings options in the **What should happen when this play runs?** and **Who can run this play on demand?** sections (more details below). 
+4. Once you have made your selections, click **Create Play**.
+
+### What should happen when this play runs?
+
+This section allows you to set what actions you would like the response play to take when it is run on an incident. Options for these actions are:
+
+- Set conference bridge details for incident
+- Notify responders other than the assignee to help resolve the incident
+- Subscribe people who are not directly involved with resolving the incident to receive status updates
+- Publish a status update to all subscribers
+
+#### Set conference bridge details for incident
+
+You can automatically include meeting details for a conference bridge in the incident details. This will make the meeting details available to responders looking at the incident in the mobile app or in the web app. Note: to send meeting details in the request to responders itself, you must also include it directly in the custom message to responders.
+
+Select the **Share conference bridge information with responders** option to enter the meeting details: 
+
+![](https://files.readme.io/5c2136a-response-plays-add-conference-bridge.png)
+
+#### Notify responders other than the assignee to help resolve the incident
+
+If your account has access to the [add responders](https://support.pagerduty.com/docs/add-responders) feature, you can select [**Escalation Policies**](https://support.pagerduty.com/docs/add-responders#section-escalation-policy-responder-notifications) and/or **Users** to notify as additional responders on an incident. You can choose to **Send the default message to the responders...** or you can select **Send a custom message to responders** (details below).
+
+##### Send a custom message to responders
+
+You may also want to use a custom responder message - this allows you to specify a conference bridge phone number or URL, or a Slack channel where the response will be taking place. 
+
+Check the the **Notify responders other than the assignee to help resolve the incident** option, then select **Send a custom message to responders** and enter your custom message.
+
+![](https://files.readme.io/e463f96-response-plays-send-custom-message.png)
+
+Phone numbers should be formatted like 234-567-8912,,,,1234#, where a comma (,) represents a one-second wait and pound (#) completes access code input.
+
+Responders will be able to tap on the phone number and/or video call URL directly from the SMS they receive.
+
+Here are phone number formats that will work:
+
++1-234-567-8912
++1(234) 567-8912
++1 (234) 567-8912
+(234) 567-8912
+234.567.8912
+234-567-8912
+1-234-567-8912
+1 (234) 567-8912
+
+#### Subscribe people who are not directly involved with resolving the incident to receive status updates
+
+If your account has access to the [add subscribers](https://support.pagerduty.com/docs/communicating-with-stakeholders) feature, you will have the option to select **Users** and/or **Teams** to subscribe to the incident when you run this play. 
+
+##### Publish a status update to all subscribers
+
+If your account has access to [add subscribers](https://support.pagerduty.com/docs/communicating-with-stakeholders) feature, you may also include a status update message that will be added when you run this play on an incident. 
+
+### Who can run this play on demand?
+
+You have the option of associating a response play to a team. At the moment only one team can be assigned to a response play. The team determines when the play will be shown in the Run a Play listing dropdown. 
+
+In this setting, you have the following options:
+
+  * *No one can run this play on demand*: This ensures that the play will not be suggested to responders when looking at an incident. This is useful for plays attached to services that automatically trigger incidents.
+  * *All incident responders*: This play will be shown to all responders, regardless of what team they are on.
+  * *Incident responders on a specific team* (only available if the play is associated with a team): The play will be shown on an incident's Run a Play listing, but only when the active user is a member of the play's team. 
+
+## Edit a Response Play
+
+1. Navigate to **Configuration** ➡️ **Response Plays**.
+2. Click the ⚙️ to the right of your desired response play and select **Edit**.
+3. Edit your response play based on the settings defined in the above sections. 
+4. Click **Save Changes**.
+
+## Running A Response Play On An Incident
+
+From the Incident details page, you can **Run a Play** from the button bar of the incident. You can select any play from the list.
+
+![](https://files.readme.io/29454ff-response-plays-run-a-play.png)
+
+A confirmation box will pop up to confirm your selection for running the play. 
+
+![](https://files.readme.io/411eb94-response-plays-run-play-dialog.png)
+
+If you added responders to a play, your responders will have the ability to **Accept** or **Decline** your request.
+
+## Automatically Running A Response Play At Incident Creation
+
+You can run a response play whenever an incident is created on a service. Choose the service and click **Edit Service**. Once on the edit screen, you can choose or clear the response play that will be used for new incidents on the chosen service.
+
+![](https://files.readme.io/84f4ae8-Screen_Shot_2017-10-27_at_11.33.00_AM.png)
+
+## Running A Play From The Mobile App
+
+You can download the app from the [App Store](https://itunes.apple.com/us/app/pagerduty/id594039512) for iOS or [Google Play](https://play.google.com/store/apps/details?id=com.pagerduty.android) for Android. Screenshots are from our iOS app, and the Android app is very similar.
+
+Open an incident and click **More**
+
+![](https://files.readme.io/f0efe74-mobile_1.jpeg)
+
+Tap **Run a Play**
+
+![](https://files.readme.io/eff1113-mobile_2.jpeg)
+
+Confirm that you want to Run the play
+
+![](https://files.readme.io/5afcb35-step_3.jpg)
+

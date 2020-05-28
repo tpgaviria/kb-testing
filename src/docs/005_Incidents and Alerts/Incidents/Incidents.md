@@ -1,0 +1,129 @@
+# Incidents
+
+---
+
+An incident represents a problem or an issue that needs to be addressed and resolved. Incidents trigger on a service, which prompts notifications to go out to on-call responders per the service's escalation policy.
+
+## Incident States
+
+* **Triggered** - An active service — meaning someone is on-call and the service is not disabled or in maintenance mode — will trigger an incident when it receives an event. The incident will escalate according to the service's escalation policy. By default, PagerDuty sends notifications when an incident is triggered, but not when it is acknowledged or resolved. Users create their own rules — or can use webhooks — to receive notifications when an incident is acknowledged or resolved.
+
+* **Acknowledged** - An acknowledged incident is being worked on, but is not yet resolved. The user that acks an incident claims ownership of the issue, and halts the escalation process. Once an incident is acknowledged, the assignee will not receive notifications unless the [Incident Ack Timeout](https://support.pagerduty.com/docs/service-settings#section-acknowledgement-timeouts) is reached. Once the Incident Ack Timeout is reached, the incident returns to a **triggered** state and notifications are sent again. The escalation process also resumes.
+
+* **Resolved** - A resolved incident has been fixed. Once an incident is resolved, no additional notifications are sent and the incident cannot be triggered again.
+
+## Incident Lifecycle
+
+### 1. Received through Services
+PagerDuty receives events from monitoring systems via integrations. An event creates an alert and an associated incident in PagerDuty.
+
+<!-- theme: info -->
+
+> ### Note
+>
+> [Suppression](https://support.pagerduty.com/docs/event-management-tools#section-suppression-and-event-rules) can be used to collect data without triggering an incident or notifying responders.
+
+### 2. Assignment via Escalation Policies and Schedules
+Unlike an alert or a suppressed event, an incident must be assigned to a user. The escalation policy determines whom an incident is assigned to. An escalation policy has one or more levels, and can accept either a schedule or a user as a target. An incident will escalate through the layers of an escalation policy until it finds someone who is on-call. This user will be notified and the incident will be assigned to them. If the user fails to acknowledge the incident before the time limit set on the escalation policy, the incident escalates to the next escalation level.
+
+### 3. Notifications via Phone, SMS, Email, or Push
+Each user configures notification rules in their user profile. PagerDuty contacts users according to their notification rules until the incident is acknowledged, resolved, or escalated, either manually or due to escalation timeout.
+
+### 4. Acknowledging and Resolving
+Notifications provide a way for responders to acknowledge that they're working on an incident or it's been resolved. Depending on a user's permissions, it's also possible for users who are not currently assigned to an incident to acknowledge or resolve an incident on the **Incidents** dashboard in the web UI.
+
+For services using alerts, it is important to note that alerts cannot be acknowledged, only triggered or resolved. If all alerts in an incident are resolved, the incident will be resolved. Similarly, when an incident is resolved, all alerts under that incident are also resolved.
+
+Resolving an incident closes the incident, while acknowledging only halts escalation. If the incident is not resolved before the end of the service's acknowledgement timeout, it re-triggers and continues to escalate.
+
+Manually resolving an incident in the web UI will prompt a confirmation box with a final Resolve Incident button. If you’re resolving only one incident, then you can add an optional Resolution Note. The Resolution Note appears in the notes section of the incident. 
+
+Services can also be configured to automatically resolve incidents using the Incident [Auto-Resolution](https://support.pagerduty.com/v1/docs/service-settings#section-auto-resolution) option.
+
+## Unacknowledging an Incident
+
+If you accidentally acknowledge an incident, you can undo this by clicking the **More Actions** button in the incident, and then **Unacknowledge Incident**.
+
+![](https://files.readme.io/c5638e2-incidents-unacknowledge-incident.png)
+
+Unacknowledging an incident brings the incident back to a **Triggered** state, and causes notifications to be sent out again. The escalation process also resumes.
+
+Unacknowledging an incident can only be done from the web UI.
+
+## Incident Redaction
+
+<!-- theme: info -->
+
+> ### Note
+>
+> This action is only available to the Account Owner. Redaction cannot be undone, not even by PagerDuty Support.
+
+In the event that an incident contains sensitive information, the **Account Owner** can permanently delete the incident's details by using the **Redact Incident** button.
+
+![](https://files.readme.io/f1849c2-incidents-redact-incident.png)
+
+After confirming that you would like to redact an incident’s name and details, it will be updated to show who redacted the data and when.
+
+## Triggering an Incident with Web UI, Email, or API
+
+There is more than one way to trigger an incident. In the PagerDuty web UI, you can trigger an incident on any service's page or on the **Incidents** page. There are two integration types — API and email — and each can be used to trigger an incident as well.
+
+<!-- theme: info -->
+
+> ### Note
+>
+> In order for an incident to trigger, someone must be on-call per the service's escalation policy. If no one is on-call an incident will not trigger.
+
+### Manually Trigger an Incident
+
+Manually opening an incident on a service will trigger an incident and notify the on-call responder. A common use case for this is to test notification rules, or to contact the on-call person to let them know about an issue on a particular service.
+
+<!-- theme: warning -->
+
+> ### Required User Permissions
+>
+> All users, except Restricted Access, Observers, Limited Stakeholders and Full Stakeholders, can manually trigger incidents.
+>
+>If you're not sure what role you have, or if you need your permissions adjusted, visit our sections on [Checking Your User Role](https://support.pagerduty.com/v1/docs/user-roles#section-checking-your-user-role) or [Changing User Roles](https://support.pagerduty.com/docs/user-roles#section-changing-user-roles).
+
+There are two places in PagerDuty where you can manually trigger an incident:
+
+1. On the **Incidents** page, click **New Incident**.
+
+![](https://files.readme.io/4ea311b-incidents-incidents-tab-trigger-incident.png)
+
+2. On a **Services** page, click **New Incident**.
+
+![](https://files.readme.io/ca1593a-incidents-service-page-trigger-incident.png)
+
+In the **Create Incident** dialog, you can optionally choose an escalation policy or a user. This selection will override the *service's* escalation policy, and the incident will notify the escalation policy or user you've selected.
+
+![](https://files.readme.io/09edca6-incidents-service-new-incident-change-ep.png)
+
+If you assign a manually triggered incident to yourself, PagerDuty will not notify you. The incident will be in an Acknowledged state since it is understood that you are aware of the incident and working to resolve it.
+
+### Send an Event Through the API
+
+If a service has an API integration, you can trigger an incident by sending a properly-formatted `POST` request with your integration key.
+
+![](https://files.readme.io/e328861-incidents-api-integration-key.png)
+
+When you send an email to the integration email address, an incident will trigger on that service. The incident will appear in the **Incidents** tab.
+
+<!-- theme: info -->
+
+> ### Note
+>
+> More info about the Events API can be found [here](https://v2.developer.pagerduty.com/docs#the-events-api). Please see [this article](https://support.pagerduty.com/v1/docs/code-samples) for code samples in Ruby, Python, and PHP.
+
+### Send an Event to an Email Integration
+
+If a service has an email integration, you can trigger an incident by sending an email to the integration's email address. To view an email integration's address go to **Configuration → Services**, select the service, click service's **Integrations** tab and look in the **Integration Key** field.
+
+![](https://files.readme.io/bc3d58a-incidents-email-integration-key.png)
+
+When you send an email to the integration email address, an incident will trigger on that service. The incident will appear in the **Incidents** tab.
+
+## Where is incident number ___?
+
+In the past, we made sure that incidents started at #1 and never skipped a number. There can be cases, however, where we're unable to create incidents fast enough. To address this, you might notice "missing" incident numbers. We don't delete your incident numbers, so if you see a skipped number, this means it was skipped when the incident was created. You should not see this often, and it does not indicate a problem.
