@@ -1,9 +1,7 @@
-// import { Link } from "gatsby"
-// import PropTypes from "prop-types"
 import React from "react"
 import Logo from "../images/PDLogoNav.png"
 
-const GlobalNav = ({ siteTitle }) => (
+const GlobalNav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark pb-0">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
