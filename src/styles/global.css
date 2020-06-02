@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #a5c6de;
+}
+
+#navbarText a {
+    font-size: 0.9em;
+    color: #f1f1f1;
+}
+
+#navbarText a:hover {
+    font-size: 0.9em;
+    color: white;
+}
+
+#homeLink:hover {
+ color: white;
+}
