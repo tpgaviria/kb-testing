@@ -10,7 +10,7 @@ const GlobalFooter = ({ siteTitle }) => (
 
             <div className="row">
 
-            <div className="col-md-2 offset-md-1 mb-md-0 mb-3">
+            <div className="col-md-2 offset-md-1 mb-md-0 mb-3 col-sm-6">
 
                 <h5 className="text-uppercase footer-header">Getting Started</h5>
 
@@ -31,7 +31,7 @@ const GlobalFooter = ({ siteTitle }) => (
 
             </div>
 
-            <div className="col-md-2 mb-md-0 mb-3">
+            <div className="col-md-2 mb-md-0 mb-3 col-sm-6">
 
                 <h5 className="text-uppercase footer-header">Resources</h5>
 
@@ -55,13 +55,13 @@ const GlobalFooter = ({ siteTitle }) => (
 
             </div>
 
-            <div className="col-md-2 mb-md-0 mb-3">
+            <div className="col-md-2 mb-md-0 mb-3 d-none d-md-block">
                 <div className="footer-logo-wrapper">
                     <img src={FooterLogo} className="d-inline-block align-middle mx-auto footer-logo" alt="PagerDuty"/>
                 </div>
             </div>
 
-            <div className="col-md-2 mb-md-0 mb-3">
+            <div className="col-md-2 mb-md-0 mb-3 col-sm-6">
 
                 <h5 className="text-uppercase footer-header">Support</h5>
 
@@ -82,7 +82,7 @@ const GlobalFooter = ({ siteTitle }) => (
 
             </div>
 
-            <div className="col-md-2 mb-md-0 mb-3">
+            <div className="col-md-2 mb-md-0 mb-3 col-sm-6">
 
                 <h5 className="text-uppercase footer-header">Company</h5>
 
