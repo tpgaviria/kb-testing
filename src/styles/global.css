@@ -15,3 +15,11 @@
 #homeLink:hover {
  color: white;
 }
+
+@media (max-width: 500px) {  
+    #navbarText {font-size:2rem;}
+  }
+
+  @media (max-width: 1260px) {  
+    #navbarText {font-size:.5rem;} /*1rem = 16px*/    
+  }
