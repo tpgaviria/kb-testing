@@ -13,13 +13,21 @@
 }
 
 #homeLink:hover {
- color: white;
+    color: white;
 }
 
-@media (max-width: 500px) {  
-    #navbarText {font-size:2rem;}
-  }
+/*-- @media only screen and (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav a.nav-link {
+        font-size: 5rem;
+    }
+} --*/
 
-  @media (max-width: 1260px) {  
-    #navbarText {font-size:.5rem;} /*1rem = 16px*/    
-  }
+@media only screen and (max-width: 1274px) {
+    #navbarText {
+        font-size: .9rem;
+    }
+    .navbar-expand-lg .navbar-nav a.nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
