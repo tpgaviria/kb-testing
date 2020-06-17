@@ -1,5 +1,6 @@
 import React from "react"
 import Logo from "../images/PDLogoNav.png"
+import "../styles/global-nav-bar.css"
 
 const GlobalNav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark pb-0">
