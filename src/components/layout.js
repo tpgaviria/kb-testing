@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet"
 
 import GlobalNav from "./global-nav-bar"
 import "./layout.css"
+import "../styles/global.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
