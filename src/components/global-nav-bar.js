@@ -13,7 +13,7 @@ const GlobalNav = () => (
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav ml-5">
+      <ul className="navbar-nav ml-lg-5">
         <li className="nav-item active">
           <a className="nav-link" href="/docs">Knowledge Base</a>
         </li>
@@ -27,7 +27,7 @@ const GlobalNav = () => (
           <a className="nav-link" href="https://community.pagerduty.com/forum/">Community Discussions</a>
         </li>
       </ul>
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-lg-auto">
         <li className="nav-item">
           <a className="nav-link" href="https://tickets.pagerduty.com/hc/en-us/requests/new">Contact Support</a>
         </li>
