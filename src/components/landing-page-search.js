@@ -1,22 +1,25 @@
 import React from "react"
-import Logo from "../images/PDLogoNav.png"
-// import "../styles/global-nav-bar.css"
+import 'font-awesome/css/font-awesome.min.css';
 
 const LandingPageSearch = () => (
 
     <div className="jumbotron jumbotron-fluid">
-        <div className="container-fluid">
+        <div className="container-fluid p-0">
 
-                <form>
-                    <div class="row justify-content-center my-lg-5 my-sm-0">
-                        <div class="col-lg-6 col-xs-2">
-                            <input type="text" class="form-control" id="inputPassword2" placeholder="Search Knowledge Base" />
-                        </div>
-                        <div class="col-lg-1">
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </div>
+
+            <form class="mb-0 my-lg-5 py-lg-2">
+                <div class="form-row justify-content-center" id="searchBar">
+                    <div class="col-8 col-lg-6">
+                        <input type="text" class="form-control" placeholder="Search Knowledge Base" />
                     </div>
-                </form>
+                    <div class="col-1 mr-5 d-none d-sm-none d-md-block">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                    <div class="col-1 mr-5 d-lg-none d-md-none">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>
 
         </div>
     </div>
