@@ -1,7 +1,7 @@
 /* Global Footer start */
 
-.page-footer{
-    padding-top: 0 !important;
+#page-footer{
+    padding-top: 0px !important;
 }
 .footer-link{
     color: #f9f9f9;
