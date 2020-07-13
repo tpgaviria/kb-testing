@@ -1,9 +1,10 @@
 import React from "react"
 import FooterLogo from "../images/P-GreenRGB.png"
 import StatusIndicator from "./status-indicator"
+import "../styles/footer.css"
 
 const GlobalFooter = ({ siteTitle }) => (
-    <footer className="page-footer font-small blue pt-4">
+    <footer className="page-footer font-small blue pt-4" id="page-footer">
 
       <div className="pd-footer container-fluid text-center text-md-left">
         <div className="pd-footer-inner">
