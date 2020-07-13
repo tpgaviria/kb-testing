@@ -6,7 +6,7 @@ import LandingPageArticles from "./landing-page-articles"
 import LandingPageCards from "./landing-page-cards"
 
 const LandingPageContainer = () => (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0 landing-container">
         <LandingPageSearch />
         <LandingPageArticles />
         <LandingPageCards />

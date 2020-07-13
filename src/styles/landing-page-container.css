@@ -1,9 +1,41 @@
-.jumbotron{
+.jumbotron {
     background-image: url('https://iqm7l1pa7bn3d42rc278rat5-wpengine.netdna-ssl.com/wp-content/uploads/2019/08/img-shipping-containers.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-   }
+}
 
-   /* #searchBar {
-    flex-wrap: nowrap;
-   } */
+.landing-articles h2 {
+    font-weight: 300;
+}
+
+.landing-articles h6 {
+    border-bottom: 2px #c0c0c0 solid;
+    color: #727272;
+    font-weight: 400;
+}
+
+.landing-page-cards .card {
+    background-color: powderblue;
+    border-radius: 0px;
+}
+
+.landing-page-cards .card-text {
+    font-size: 100%;
+    line-height: 1.4rem;
+}
+
+.landing-page-cards .card-title {
+    font-weight: 300;
+    line-height: 1.0;
+    font-size: 1.7rem;
+}
+
+.landing-page-cards .card-footer {
+    background-color: transparent;
+    border-top: 0px;
+}
+
+.landing-page-cards .btn {
+    background-color: white;
+    border-radius: 0px;
+}
