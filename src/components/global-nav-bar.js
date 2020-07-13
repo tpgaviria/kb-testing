@@ -1,5 +1,6 @@
 import React from "react"
 import Logo from "../images/PDLogoNav.png"
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "../styles/global-nav-bar.css"
 
 const GlobalNav = () => (

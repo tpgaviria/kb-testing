@@ -1,6 +1,6 @@
 import React from "react"
 import StevieAward from "../images/gold-stevie-award.png"
-import "../styles/footer.css"
+// import "../styles/footer.css"
 import 'font-awesome/css/font-awesome.min.css';
 import CsatRating from "./csat-rating";
 
@@ -15,7 +15,7 @@ const LandingFooter = ({ siteTitle }) => (
                     <p>Available 24 hours a day* Monday-Friday</p>
                 </div>
                 <div className="col-xs-12 col-sm-9 contact-details">
-                            <div class="row no-padding">
+                            <div className="row no-padding">
                     <div className="col-xs-7 col-md-3">
                         <p><i className="fa fa-phone"></i> 1-844-700-DUTY</p>
                     </div>
