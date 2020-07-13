@@ -156,4 +156,14 @@
 .contact-support p{
     margin-bottom: 0;
 }
+
+.contact-bar a:hover{
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.csat-blurb a:hover{
+    color: #212529;
+    text-decoration: none;
+}
 /*Landing Footer end */
