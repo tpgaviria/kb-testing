@@ -7,16 +7,16 @@ const LandingPageSearch = () => (
         <div className="container-fluid p-0">
 
 
-            <form class="mb-0 my-lg-5 py-lg-2">
-                <div class="form-row justify-content-center" id="searchBar">
-                    <div class="col-8 col-lg-6">
-                        <input type="text" class="form-control" placeholder="Search Knowledge Base" />
+            <form className="mb-0 my-lg-5 py-lg-2">
+                <div className="form-row justify-content-center" id="searchBar">
+                    <div className="col-8 col-lg-6">
+                        <input type="text" className="form-control" placeholder="Search Knowledge Base" />
                     </div>
-                    <div class="col-1 mr-5 d-none d-sm-none d-md-block">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                    <div className="col-1 mr-5 d-none d-sm-none d-md-block">
+                        <button type="submit" className="btn btn-primary">Search</button>
                     </div>
-                    <div class="col-1 mr-5 d-lg-none d-md-none">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <div className="col-1 mr-5 d-lg-none d-md-none">
+                        <button type="submit" className="btn btn-primary"><i className="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </form>

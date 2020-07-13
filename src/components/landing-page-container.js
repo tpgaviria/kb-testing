@@ -1,5 +1,4 @@
 import React from "react"
-import Logo from "../images/PDLogoNav.png"
 import "../styles/landing-page-container.css"
 
 import LandingPageSearch from "./landing-page-search"
