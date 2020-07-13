@@ -1,12 +1,12 @@
 import React from "react"
 import StevieAward from "../images/gold-stevie-award.png"
-// import "../styles/footer.css"
+import "../styles/footer.css"
 import 'font-awesome/css/font-awesome.min.css';
 import CsatRating from "./csat-rating";
 
 const LandingFooter = ({ siteTitle }) => (
 
-    <div className="landing-footer">
+    <div className="landing-footer container mt-5">
         <div className="row">
             <div className="col-sm-12 contact-bar">
             <div className="row no-padding">
