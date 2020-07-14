@@ -14,9 +14,25 @@
     font-weight: 400;
 }
 
-.landing-page-cards .card {
-    background-color: powderblue;
+.landing-page-cards * {
     border-radius: 0px;
+}
+
+.card1 {
+    background-color: #d2e4dc;
+}
+
+.card2 {
+    background-color: #a5c6de;
+}
+
+.card3 {
+    background-color: #94b2a5;
+}
+
+.card4 {
+    background-color: #00607f;
+    color: white;
 }
 
 .landing-page-cards .card-text {
@@ -37,5 +53,16 @@
 
 .landing-page-cards .btn {
     background-color: white;
+    border-color: rgba(75, 75, 75, 0.479);
+}
+
+.landing-page-cards .btn {
     border-radius: 0px;
+    width: 100%;
+    transition: .25s all ease-in-out;
+    background-color: white;
+}
+
+.landing-page-cards .btn:hover {
+    background-color: rgba(255, 255, 255, 0.651);
 }
