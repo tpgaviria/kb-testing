@@ -5,6 +5,7 @@ try {
     const config = yaml.safeLoad(fs.readFileSync('../doc-order/doc-order.yaml', 'utf8'));
     const indentedJson = JSON.stringify(config, null, 4);
     console.log(indentedJson);
+    // fs.
 } catch (e) {
     console.log(e);
 }
