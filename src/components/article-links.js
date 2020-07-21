@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-// import articleOrder from "../doc-order/doc-order"
-import articleOrder2 from "../doc-order/doc-order2"
+import data from "../util/doc-order.json"
 
 
 export default function Articles() {
@@ -9,8 +8,8 @@ export default function Articles() {
   return (
     <div>
 
-
-      {articleOrder2.map(index => (
+      {console.log(data)}
+      {data.map(index => (
         <div>
 
           <h4>{Object.keys(index)}</h4>
@@ -28,7 +27,6 @@ export default function Articles() {
               )
 
             } else if ((typeof index === 'object') && (Object.keys(index)[0] !== 'external url')) {
-              console.log(Object.keys(index)[0])
               return (<div>
                 <p>{Object.keys(index)} ►</p>
                 {Object.values(index)[0].map(index => (
