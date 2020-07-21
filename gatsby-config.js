@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/kb-testing",
   siteMetadata: {
     title: `PagerDuty Knowledge Base`,
     description: `Documentation on how to use the PagerDuty product.`,
