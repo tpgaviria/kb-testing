@@ -1,4 +1,0 @@
----
-title: "BMC Remedy"
-excerpt: ""
----

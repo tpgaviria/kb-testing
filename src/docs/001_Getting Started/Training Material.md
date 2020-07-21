@@ -1,4 +1,0 @@
----
-title: "Training Material"
-excerpt: ""
----

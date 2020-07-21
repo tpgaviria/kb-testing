@@ -1,4 +1,0 @@
----
-title: "Training Videos"
-excerpt: ""
----
