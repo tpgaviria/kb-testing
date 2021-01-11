@@ -6,13 +6,13 @@ import data from "../util/doc-order.json"
 export default function Articles() {
 
   return (
-    <div>
+    <div class="article-order">
 
       {console.log(data)}
       {data.map(index => (
         <div>
 
-          <h4>{Object.keys(index)}</h4>
+          <h6>{Object.keys(index)}</h6>
 
 
           {Object.values(index)[0].map(index => {
@@ -21,22 +21,22 @@ export default function Articles() {
               return (
 
                 <div>
-                  <p>{Object.values(index)[0].name} (url: {Object.values(index)[0].url})***</p>
+                  <p class="article-link">{Object.values(index)[0].name} (url: {Object.values(index)[0].url})***</p>
                 </div>
 
               )
 
             } else if ((typeof index === 'object') && (Object.keys(index)[0] !== 'external url')) {
               return (<div>
-                <p>{Object.keys(index)} ►</p>
+                <p class="article-link">{Object.keys(index)} ►</p>
                 {Object.values(index)[0].map(index => (
-                  <p>     --- {Object.values(index)}</p>
+                  <p class="article-link">     --- {Object.values(index)}</p>
                 ))}</div>)
             }
             else {
               return (
                 <div>
-                  <p>{index}</p>
+                  <p class="article-link">{index}</p>
                 </div>
               )
             }

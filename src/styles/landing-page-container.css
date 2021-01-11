@@ -4,6 +4,19 @@
     background-repeat: no-repeat;
 }
 
+.article-link {
+    font-size: 12pt;
+    margin: 0;
+}
+
+.article-order {
+    margin-left: 50px;
+}
+
+h6 {
+    margin-top: 30px;
+}
+
 .landing-articles h2 {
     font-weight: 300;
 }
